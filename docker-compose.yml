@@ -18,7 +18,7 @@ services:
         build: 
             context: ./Data
             dockerfile: Dockerfile
-        environment:
-            MYSQL_ROOT_PASSWORD: "db165289_msocial_user"
+        env_file: 
+            - www.matesocial.com.env
         volumes: 
-            - /apps/www.matesoclail.com/var/mysql/data/:/var/lib/mysql
+            - /apps/www.matesocial.com/var/mysql/data/:/var/lib/mysql
