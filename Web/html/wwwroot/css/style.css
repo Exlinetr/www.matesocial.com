@@ -1,0 +1,328 @@
+@font-face {
+    font-family: SFDisplay-Bold;
+    src: url('../fonts/System-San-Francisco-Display-Bold.ttf');
+}
+@font-face {
+    font-family: SFDisplay;
+    src: url('../fonts/System-San-Francisco-Display-Regular.ttf');
+}
+@font-face {
+    font-family: SFDisplay-Thin;
+    src: url('../fonts/System-San-Francisco-Display-Thin.ttf');
+}
+@font-face {
+    font-family: SFDisplay-Ultraligth;
+    src: url('../fonts/System-San-Francisco-Display-Ultralight.ttf');
+}
+
+
+body{
+    margin: 0;
+    padding: 0;
+    background: #000;
+    color: #fff;
+    font-family: SFDisplay-Thin;
+    font-size: 1.1em;
+}
+img{
+    max-width: 100%;
+}
+textarea:focus, input:focus{
+    outline: none;
+}
+.text{
+    text-align: center;
+    display: inline-block;
+    width: 100%;
+}
+
+.media{
+    position: absolute;
+    min-width: 100%;
+    width: 100%;
+    min-height: 100%;
+    z-index: -4;
+}
+.media video{
+    z-index: 2;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -100;
+    transform: translateX(-50%) translateY(-50%);
+    background: #000;
+    background-size: cover;
+    transition: 1s opacity;
+}
+.block-layer{
+    position: absolute;
+    min-width: 100%;
+    width: 100%;
+    min-height: 100%;
+    z-index:10;
+}
+
+.shadow{
+    left: 0;
+    top: 0;
+    background: #000;
+    opacity: .3;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: -1;
+    -webkit-transform: translateZ(0px);
+    -webkit-transform: translate3d(0,0,0);
+    -webkit-perspective: 1000;
+}
+
+.wrap{
+    height: 100%!important;
+}
+
+.board{
+    z-index:99;
+}
+
+.board .content{
+    float: left;
+    box-sizing: border-box;
+    padding: 30px;
+}
+
+.board .content .main {
+    position: relative;
+    text-align: center;
+    border-radius: 7px;
+    max-width: 800px;
+    width: 100%;
+    height: 100%;
+    margin: auto;
+    margin-top: 50px;
+    padding: 15px 5px 25px 5px;
+    box-sizing: border-box;
+    border-radius: 7px;    
+    overflow: hidden;
+}
+
+.board .content .main .info  {
+    padding: 30px 20px;
+    padding: 20px 5px 10px 0;
+    display: inline-block;
+    text-align: center;
+    width: 100%;
+    box-sizing: border-box;
+    z-index: 99;
+}
+
+.board .content .main .info .title{
+    font-size: 1.6em;
+}
+
+.board .content .main .info .one-icon{
+    margin-top: 15px;    
+}
+.board .content .main .info .one-title{
+    font-family: SFDisplay;
+    font-size: 3.2em;
+    font-weight: 500;
+    margin-top: 25px;    
+    text-transform: uppercase;
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#e61a8b+0,eb5a36+100 */
+    background: #e61a8b; /* Old browsers */
+    background: -moz-linear-gradient(left, #e61a8b 0%, #eb5a36 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(left, #e61a8b 0%,#eb5a36 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to right, #e61a8b 0%,#eb5a36 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e61a8b', endColorstr='#eb5a36',GradientType=0 ); /* IE6-9 */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.board .content .main .info .data-context{
+        max-width: 262px;
+        margin: auto;
+        margin-top: 20px;
+        width: 100%;
+}
+.board .content .main .info .date-title{
+    font-family: SFDisplay;
+    font-size: 1.5em;
+}
+.board .content .main .info .date-title span{
+    float: left;
+}
+.board .content .main .info img{
+    max-width: 100%;
+}
+.board .content .main .info .apple-icon{
+    background: url('../images/apple-icon.png') no-repeat center center;
+    width: 30px;
+    height: 37px;
+    display: inline-block;
+    margin: -9px 5px 0px 5px;
+}
+.board .content .main .info .min-info{
+    font-size: 1.2em; 
+    margin-top:15px;
+}
+.board .content .main .btns{
+    max-width: 405px;
+    margin: auto;
+}
+.board .content .main .btns input{
+    width: 100%;
+    max-width: 200px;
+    border: 0px;
+    border-radius: 7px;
+    box-sizing:border-box;
+    padding: 10px;
+    text-transform: uppercase;
+    text-align: center;
+}
+    .board .content .main .btns #mailInput {
+    	text-transform: uppercase;
+    }
+.board .content .main .send-btn{
+    cursor: pointer;
+    max-width: 190px;
+    margin-left: 5px;
+    color: #fff;
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#e61a8b+0,eb5a36+100 */
+    background: #e61a8b; /* Old browsers */
+    background: -moz-linear-gradient(left, #e61a8b 0%, #eb5a36 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(left, #e61a8b 0%,#eb5a36 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to right, #e61a8b 0%,#eb5a36 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e61a8b', endColorstr='#eb5a36',GradientType=0 ); /* IE6-9 */
+}
+
+.board .content .main .success{
+    width: 300px;
+    margin: auto;    
+}
+.board .content .main .success .border{
+    height: 300px;
+    width: 300px;
+    border-radius: 300px;
+    color: #fff;
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#e61a8b+0,eb5a36+100 */
+    background: #e61a8b; /* Old browsers */
+    background: -moz-linear-gradient(left, #e61a8b 0%, #eb5a36 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(left, #e61a8b 0%,#eb5a36 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to right, #e61a8b 0%,#eb5a36 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e61a8b', endColorstr='#eb5a36',GradientType=0 ); /* IE6-9 */
+
+}
+.board .content .main .success .border img{  
+    margin-top: 40px;
+    margin-left: 15px;
+}
+.board .content .main .success .border span{
+    margin-top: 20px;
+    font-family: SFDisplay-Thin;    
+    font-size: 1.2em;
+}
+
+.animated {
+  -webkit-animation-duration: 1.0s;
+  animation-duration: 1.0s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-timing-function: liner;
+  animation-timing-function: linear;
+  animation-iteration-count: unset;
+  -webkit-animation-iteration-count: unset;
+}
+@-webkit-keyframes bounce {
+  0% {
+    transform: translateY(-500px);
+  }
+  100%{
+    -webkit-transform: translateY(0px);
+  }
+}
+@keyframes bounce {
+  0% {
+    transform: translateY(-500px);
+  }
+  100%{
+    -webkit-transform: translateY(0px);
+  }
+}
+.bounce {
+    -webkit-animation-name: bounce;
+    animation-name: bounce;
+}
+
+
+@-webkit-keyframes opacity {
+  0% {
+    opacity: 0
+  }
+  100%{
+    opacity: 100;
+  }
+}
+@keyframes opacity {
+  0% {
+    opacity: 0
+  }
+  100%{
+    opacity: 100;
+  }
+}
+.opacity {
+    -webkit-animation-name: opacity;
+    animation-name: opacity;
+}
+
+@media screen and (max-width: 680px) {
+    .logo{
+            text-align: center;
+    }
+    .board .content{
+        padding: 10px 0 0 0;
+    }
+    .board .content .main{
+        border-radius: 0;
+        margin-top: 15px;
+    }
+    .board .content .main .info {
+        padding: 20px 5px 10px 0;
+        padding: 10px 2px;
+    }
+    .board .content .main .info .one-title{
+        font-size: 2.0em!important;
+    }
+    .board .content .main .info .title {
+        font-size: 1.5em!important;
+    }
+    .board .content .main .info .date-title {
+        font-size: 1.0em!important;
+    }
+    .board .content .main .info .min-info{
+        font-size: 0.9em!important;
+    }
+    .board .content .main .info .apple-icon{
+        width: 25px;
+        height: 30px;
+        background-size: contain;
+    }
+    .board .content .main .info .data-context{
+        text-align: center;
+        display: inline-block;
+        width: auto;
+    }
+    .board .content .main .btns input,.send-btn{
+        max-width: 100%;
+        margin: 0;
+    }
+    .board .content .main .btns .send-btn{
+          margin-top: 5px;
+    }
+    .board .content .main .info .one-title{
+        margin-top: 10px;
+    }
+}

@@ -1,0 +1,24 @@
+version: "2"
+services:
+    matesocial.com.web:
+        env_file: 
+            - www.matesocial.com.env
+        container_name: www.matesocial.com.web.container
+        image: furkaandogan/www.matesocial.com.web:0.1
+        build: 
+            context: ./Web
+            dockerfile: Dockerfile
+        ports:
+            - "1002:80"
+        depends_on:
+            - matesocial.com.mysqlserver
+    matesocial.com.mysqlserver:
+        container_name: www.matesocial.com.mysqlserver.container
+        image: "mysql:5.5"
+        build: 
+            context: ./Data
+            dockerfile: Dockerfile
+        environment:
+            MYSQL_ROOT_PASSWORD: "db165289_msocial_user"
+        volumes: 
+            - /apps/www.matesoclail.com/var/mysql/data/:/var/lib/mysql
